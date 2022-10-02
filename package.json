@@ -24,6 +24,7 @@
     "@ngrx/router-store": "^14.3.0",
     "@ngrx/store": "^14.3.0",
     "@ngrx/store-devtools": "^14.3.0",
+    "@ngx-translate/core": "^14.0.0",
     "@types/jquery": "^3.5.14",
     "bootstrap": "^5.2.0",
     "jquery": "^3.6.1",
