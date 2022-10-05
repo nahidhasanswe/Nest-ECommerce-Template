@@ -9,11 +9,11 @@ import { GoogleAnalyticsModule } from './google-analytics/google.analytics.modul
     imports: [
         HttpClientModule,
         ReduxStoreModule,
-        PixelModule.forRoot({
-            pixelId: '',
-            enabled: environment.production
-        }),
-        GoogleAnalyticsModule
+        // PixelModule.forRoot({
+        //     pixelId: '',
+        //     enabled: environment.production
+        // }),
+        // GoogleAnalyticsModule
     ]
 })
 export class CoreModule {
