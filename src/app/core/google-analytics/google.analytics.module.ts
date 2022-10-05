@@ -14,4 +14,6 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
 
     ]
 })
-export class GoogleAnalyticsModule {}
+export class GoogleAnalyticsModule {
+   
+}

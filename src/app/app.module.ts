@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -10,11 +9,7 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}, {}),
-    TranslateModule.forRoot({
-      defaultLanguage: 'en',
-      
-    })
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

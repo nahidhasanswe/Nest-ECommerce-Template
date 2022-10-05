@@ -1,27 +1,34 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { TokenService } from './services/token.service';
-import { AuthService } from './services/auth.service';
-import { StoreModule } from '@ngrx/store';
 import { ReduxStoreModule } from './store/store.module';
+import { PixelModule } from './facebook-pixel/facebook.pixel.module';
+import { environment } from 'src/environments/environment';
+import { GoogleAnalyticsModule } from './google-analytics/google.analytics.module';
 
 @NgModule({
-    declarations: [
-       
-    ],
     imports: [
         HttpClientModule,
-        StoreModule,
-        ReduxStoreModule
-    ],
-    exports: [
-        HttpClientModule,
-        StoreModule,
-        ReduxStoreModule
-    ],
-    providers: [
-        TokenService,
-        AuthService
+        ReduxStoreModule,
+        PixelModule.forRoot({
+            pixelId: '',
+            enabled: environment.production
+        }),
+        GoogleAnalyticsModule
     ]
 })
-export class CoreModule {}
+export class CoreModule {
+
+     /**
+     * Constructor
+     */
+      constructor(
+        @Optional() @SkipSelf() parentModule?: CoreModule
+    )
+    {
+        // Do not allow multiple injections
+        if ( parentModule )
+        {
+            throw new Error('CoreModule has already been loaded. Import this module in the AppModule only.');
+        }
+    }
+}
