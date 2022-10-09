@@ -10,19 +10,19 @@ export class LoggerService {
 
     constructor() { }
 
-    public info(msg: string): void {
+    public info(msg: any): void {
         this.logWith(this.logLevel.Info, msg);
     }
 
-    public warn(msg: string): void {
+    public warn(msg: any): void {
         this.logWith(this.logLevel.Warn, msg);
     }
 
-    public error(msg: string): void {
+    public error(msg: any): void {
         this.logWith(this.logLevel.Error, msg);
     }
 
-    private logWith(level: any, msg: string): void {
+    private logWith(level: any, msg: any): void {
         if (level <= this.logLevel.Error && isDevMode()) {
             switch (level) {
                 case this.logLevel.None:

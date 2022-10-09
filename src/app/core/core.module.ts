@@ -4,6 +4,7 @@ import { ReduxStoreModule } from './store/store.module';
 import { PixelModule } from './facebook-pixel/facebook.pixel.module';
 import { environment } from 'src/environments/environment';
 import { GoogleAnalyticsModule } from './google-analytics/google.analytics.module';
+import { FirebaseModule } from './firebase/firebase.module';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { GoogleAnalyticsModule } from './google-analytics/google.analytics.modul
         //     pixelId: '',
         //     enabled: environment.production
         // }),
-        // GoogleAnalyticsModule
+        // GoogleAnalyticsModule,
+        FirebaseModule.forRoot()
     ]
 })
 export class CoreModule {
