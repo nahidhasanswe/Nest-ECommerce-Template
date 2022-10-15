@@ -5,6 +5,7 @@ import { PixelModule } from './facebook-pixel/facebook.pixel.module';
 import { environment } from 'src/environments/environment';
 import { GoogleAnalyticsModule } from './google-analytics/google.analytics.module';
 import { FirebaseModule } from './firebase/firebase.module';
+import { GMapModule } from './google-map/google.map.module';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { FirebaseModule } from './firebase/firebase.module';
         //     enabled: environment.production
         // }),
         // GoogleAnalyticsModule,
-        FirebaseModule.forRoot()
+        FirebaseModule.forRoot(),
+        GMapModule.forRoot('AIzaSyA7YVvzohvl8ZUcEDqe2fWD6nwGxTFhNKk')
     ]
 })
 export class CoreModule {
